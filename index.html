@@ -1,98 +1,37 @@
 <!DOCTYPE html>
-<!-- 这只是一个demo版本，写的非常乱，自行修改 -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  
+<!-- Just Do It ! -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <title>NovelAI tag在线生成器</title>
   <meta name="description" content="帮你生成NovelAI的tag">
   <meta name="keywords" content="novelai,tags,tag生成器,novel ai,ai画图">
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <link rel="shortcut icon" href="https://wolfchen.top/tag/favicon.ico">
+  <link rel="shortcut icon" href="./favicon.ico">
   <link rel="stylesheet" href="./index_files/layui.css" media="all">
   <link rel="stylesheet" href="./index_files/style.css" media="all">
+  
+  <link rel="stylesheet" href="./index_files/tc.css" media="all">
+  <script type="text/javascript" src="./index_files/tc.js"></script>
+  
   <!--link rel="stylesheet" href="./css/style.css"  media="all"-->
   <!--link rel="stylesheet" href="../css/layui.mobile.css"  media="all"-->
   <script src="./index_files/hm.js"></script><script src="./index_files/jquery.min.js"></script><style type="text/css"></style>
 
 <!-- 下面是弹窗代码 -->
-
-<head>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        .overlay {
-            display: none; /* 初始隐藏 */
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(200, 200, 200, 0.7); /* 浅灰色背景 */
-            z-index: 1000;
-        }
-
-        .popup {
-            display: none; /* 初始隐藏 */
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) translateY(-30px); /* 向上偏移 */
-            background-color: white;
-            border-radius: 10px; /* 圆角 */
-            padding: 20px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            z-index: 1001;
-            animation: slideDown 0.5s forwards; /* 动画效果 */
-        }
-
-        /* 弹出动画 */
-        @keyframes slideDown {
-            from {
-                transform: translate(-50%, -50%) translateY(-30px);
-            }
-            to {
-                transform: translate(-50%, -50%) translateY(0);
-            }
-        }
-
-
-    </style>
-</head>
 <body>
-
     <div id="overlay" class="overlay"></div>
     <div id="popup" class="popup">
-        <h2>欢迎!</h2>
-        <p>这是一个简单的弹窗示例。您可以在这里放置任何内容。</p>
-        <button onclick="closePopup()">关闭</button>
+        <h1><font color="orange">欢迎!</font></h1>
+        <div style="text-align: center"><img src="./index_files/nahida.jpg" alt="some_text" width="300" height="110"></div>
+        <p><h3>欢迎使用Stable Diffusion | NovelAI<font color="silver"><s>涩图</s></font>tag生成器<h3></p>
+        <p><h3><font color="orange">这是什么？</font></h3></p>
+        <p>这是Stable Diffusion及NovelAI画图模型的关键词标签生成工具。喜欢AI画图？不知道画什么？快来选几个标签试试吧</p>
+        <div style="text-align: right"><button class="layui-btn layui-btn-sm layui-btn-normal" onclick="closePopup()">关闭</button></div>
     </div>
-
-    <script>
-        // 弹出弹窗
-        function openPopup() {
-            document.getElementById('overlay').style.display = 'block';
-            document.getElementById('popup').style.display = 'block';
-        }
-
-        // 关闭弹窗
-        function closePopup() {
-            document.getElementById('overlay').style.display = 'none';
-            document.getElementById('popup').style.display = 'none';
-        }
-
-        // 自动弹出
-        window.onload = function() {
-            openPopup();
-        };
-    </script>
-
 </body>
-
 <!-- 弹窗结束 -->
 
 <link id="layuicss-laydate" rel="stylesheet" href="./index_files/laydate.css" media="all"><link id="layuicss-layer" rel="stylesheet" href="./index_files/layer.css" media="all"><link id="layuicss-skincodecss" rel="stylesheet" href="./index_files/code.css" media="all"><style class="mpa-style-fix ImageGatherer">.FotorFrame{position:fixed!important}</style><style class="mpa-style-fix SideFunctionPanel">.weui-desktop-online-faq__wrp{top:304px!important;bottom:unset!important}.weui-desktop-online-faq__wrp .weui-desktop-online-faq__switch{width:38px!important}</style></head>
@@ -142,11 +81,8 @@
 <div class="draggable-element" id="tagbesta"><div class="minus" style="display:none">-</div><div class="plus" style="display:none">+</div><div class="tagtext"><span id="engbesta" class="english" style="display:inline-block">masterpiece</span><span class="chinese" style="display:inline-block">大师作品</span></div><div id="del" class="del" style="display:none"><i class="layui-icon">X</i></div></div>
 <div class="draggable-element" id="tagbestb"><div class="minus" style="display:none">-</div><div class="plus" style="display:none">+</div><div class="tagtext"><span id="engbestb" class="english" style="display:inline-block">best quality</span><span class="chinese" style="display:inline-block">最好画质</span></div><div id="del" class="del" style="display:none"><i class="layui-icon">X</i></div></div>
 
-
 <div id="addtag"></div>
 </div>
-
-
 
 <div style="display: flex;flex-flow: row nowrap;">
 <div class="layui-form-item layui-form-text" style="flex: 100 100 0%;display: inline-block;vertical-align: middle;">
@@ -169,25 +105,6 @@
 </div>
 </div>
 
-<div style="display: flex;flex-flow: row nowrap;">
-<div class="layui-form-item layui-form-text" style="flex: 100 100 0%;display: inline-block;vertical-align: middle;">
-<!--label class="layui-form-label">正</label-->
-  <div class="layui-input-block" style="margin-left:0px;">
-    <textarea id="tagarea2" class="layui-textarea" style="min-height: 10px;">lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, bad feet,</textarea>
-  </div>    
-</div>
-
-<div align="center" style="width: auto;margin-left:10px;display: inline-block;vertical-align: middle;">
-<div style=" margin-left:0">
-<button class="layui-btn layui-btn-sm layui-btn-normal" onclick="copytag2()">复制 Copy</button>
-<button class="layui-btn layui-btn-sm layui-btn-normal" onclick="savetag2()">保存 Save</button>
-<button class="layui-btn layui-btn-sm layui-btn-normal" onclick="backtag2()">默认 Default</button>
-<button class="layui-btn layui-btn-sm layui-btn-danger" onclick="cleartag2()">清空 Clear</button>
-</div>
-</div>
-</div>
-
-
 <div class="layui-tab layui-tab-card">
   <ul class="layui-tab-title">
     <li>常用</li>
@@ -205,10 +122,8 @@
     <li>动作</li>
     <li>R18</li>
     <li>动漫/游戏角色</li>
-    
   </ul>
 <div class="layui-tab-content" style="height: 380px;overflow-y: scroll;">
-
 
 <div class="layui-tab-item">
 <p>优化Tag</p>
@@ -230,7 +145,6 @@
 </span></div></div><div class="tagbutton" id="but0tagset184"><div class="minus" style="display: none;">-</div><div class="plus" style="display: none;">+</div><div class="buttext"><span class="english">spread pussy</span><span class="chinese">掰开XX
 </span></div></div><div class="tagbutton" id="but0tagset185"><div class="minus" style="display: none;">-</div><div class="plus" style="display: none;">+</div><div class="buttext"><span class="english">ass_visible_through_thighs</span><span class="chinese">透过大腿可见屁股</span></div></div></form>
 <br><br><br><br><br></div>
-
 
 <div class="layui-tab-item layui-show">
 <!--div class="tagbutton" id="buttest1"><div class="minus">-</div><div class="buttext"><span class="english">test</span><span class="chinese">测试</span></div><div class="plus">+</div></div-->
@@ -282,7 +196,6 @@
 </span></div></div><div class="tagbutton" id="butenvironment326"><div class="minus" style="display: none;">-</div><div class="plus" style="display: none;">+</div><div class="buttext"><span class="english">in the cyberpunk city</span><span class="chinese">在赛博朋克城市
 </span></div></div><div class="tagbutton" id="butenvironment327"><div class="minus" style="display: none;">-</div><div class="plus" style="display: none;">+</div><div class="buttext"><span class="english">steam</span><span class="chinese">蒸汽</span></div></div></form>
 <br><br><br><br><br></div>
-
 
 <div class="layui-tab-item">
     <form class="layui-form"><div class="tagbutton" id="butstyle0"><div class="minus" style="display: none;">-</div><div class="plus" style="display: none;">+</div><div class="buttext"><span class="english">artbook</span><span class="chinese">原画
@@ -345,7 +258,6 @@
 </span></div></div><div class="tagbutton" id="butstyle57"><div class="minus" style="display: none;">-</div><div class="plus" style="display: none;">+</div><div class="buttext"><span class="english">artist_request</span><span class="chinese">作者未知,需要补完
 </span></div></div><div class="tagbutton" id="butstyle58"><div class="minus" style="display: none;">-</div><div class="plus" style="display: none;">+</div><div class="buttext"><span class="english">what</span><span class="chinese">不知所谓</span></div></div></form>
 <br><br><br><br><br></div>
-
 
 <div class="layui-tab-item">
     <p>人物</p>
@@ -414,7 +326,6 @@
 </span></div></div><div class="tagbutton" id="butjob37"><div class="minus" style="display: none;">-</div><div class="plus" style="display: none;">+</div><div class="buttext"><span class="english">yukkuri_shiteitte_ne</span><span class="chinese">油库里
 </span></div></div><div class="tagbutton" id="butjob38"><div class="minus" style="display: none;">-</div><div class="plus" style="display: none;">+</div><div class="buttext"><span class="english">yuri</span><span class="chinese">百合</span></div></div></form>
 <br><br><br><br><br></div>
-
 
 <div class="layui-tab-item">
     <p>长度</p>
@@ -573,7 +484,6 @@
 </span></div></div><div class="tagbutton" id="buthair652"><div class="minus" style="display: none;">-</div><div class="plus" style="display: none;">+</div><div class="buttext"><span class="english">snowflake hair ornament</span><span class="chinese">雪花发饰</span></div></div></form>
 <br><br><br><br><br></div>
 
-
 <div class="layui-tab-item">
     <form class="layui-form"><div class="tagbutton" id="buthead0"><div class="minus" style="display: none;">-</div><div class="plus" style="display: none;">+</div><div class="buttext"><span class="english">food on face</span><span class="chinese"> 食物在脸上（食物可替换）
 </span></div></div><div class="tagbutton" id="buthead1"><div class="minus" style="display: none;">-</div><div class="plus" style="display: none;">+</div><div class="buttext"><span class="english">light blush</span><span class="chinese">淡淡腮红
@@ -722,7 +632,6 @@
 </span></div></div><div class="tagbutton" id="buteye310"><div class="minus" style="display: none;">-</div><div class="plus" style="display: none;">+</div><div class="buttext"><span class="english">shading eyes</span><span class="chinese">遮住眼睛</span></div></div></form>
 <br><br><br><br><br></div>
 
-
 <div class="layui-tab-item">
     <p>胸</p>
     <form class="layui-form"><div class="tagbutton" id="butbreast0"><div class="minus" style="display: none;">-</div><div class="plus" style="display: none;">+</div><div class="buttext"><span class="english">breasts</span><span class="chinese">胸
@@ -740,7 +649,6 @@
     <form class="layui-form r18"><div class="tagbutton" id="butbreast180"><div class="minus" style="display: none;">-</div><div class="plus" style="display: none;">+</div><div class="buttext"><span class="english">breasts out</span><span class="chinese">露出胸部
 </span></div></div><div class="tagbutton" id="butbreast181"><div class="minus" style="display: none;">-</div><div class="plus" style="display: none;">+</div><div class="buttext"><span class="english">one breast out</span><span class="chinese">露出一边</span></div></div></form>
 <br><br><br><br><br></div>
-
 
 <div class="layui-tab-item">
     <p>衣服</p>
@@ -847,7 +755,6 @@
 </span></div></div><div class="tagbutton" id="butcloth1817"><div class="minus" style="display: none;">-</div><div class="plus" style="display: none;">+</div><div class="buttext"><span class="english">fundoshi</span><span class="chinese">日式丁字裤
 </span></div></div><div class="tagbutton" id="butcloth1818"><div class="minus" style="display: none;">-</div><div class="plus" style="display: none;">+</div><div class="buttext"><span class="english">lingerie</span><span class="chinese">女用贴身内衣裤</span></div></div></form>
 <br><br><br><br><br></div>
-
 
 <div class="layui-tab-item">
     <p>袜子</p>
@@ -976,9 +883,9 @@
 </span></div></div><div class="tagbutton" id="butshoe5"><div class="minus" style="display: none;">-</div><div class="plus" style="display: none;">+</div><div class="buttext"><span class="english">mary_janes</span><span class="chinese">玛丽珍鞋
 </span></div></div><div class="tagbutton" id="butshoe6"><div class="minus" style="display: none;">-</div><div class="plus" style="display: none;">+</div><div class="buttext"><span class="english">uwabaki</span><span class="chinese">女式学生鞋
 </span></div></div><div class="tagbutton" id="butshoe7"><div class="minus" style="display: none;">-</div><div class="plus" style="display: none;">+</div><div class="buttext"><span class="english">slippers</span><span class="chinese">拖鞋
-</span></div></div><div class="tagbutton" id="butshoe8"><div class="minus" style="display: none;">-</div><div class="plus" style="display: none;">+</div><div class="buttext"><span class="english">knee_boots</span><span class="chinese">马靴</span></div></div></form>
+</span></div></div><div class="tagbutton" id="butshoe8"><div class="minus" style="display: none;">-</div><div class="plus" style="display: none;">+</div><div class="buttext"><span class="english">knee_boots</span><span class="chinese">马靴
+</span></div></div><div class="tagbutton" id="butshoe8"><div class="minus" style="display: none;">-</div><div class="plus" style="display: none;">+</div><div class="buttext"><span class="english">no shoes</span><span class="chinese">没有鞋</span></div></div></form>
 <br><br><br><br><br></div>
-
 
 <div class="layui-tab-item">
     <p>装饰</p>
@@ -1057,7 +964,6 @@
 </span></div></div><div class="tagbutton" id="butdec72"><div class="minus" style="display: none;">-</div><div class="plus" style="display: none;">+</div><div class="buttext"><span class="english">smartphone </span><span class="chinese">手机
 </span></div></div><div class="tagbutton" id="butdec73"><div class="minus" style="display: none;">-</div><div class="plus" style="display: none;">+</div><div class="buttext"><span class="english">bandaid</span><span class="chinese">创可贴</span></div></div></form>
 <br><br><br><br><br></div>
-
 
 <div class="layui-tab-item">
     <p>动作</p>
@@ -1157,7 +1063,6 @@
 </span></div></div><div class="tagbutton" id="butaction184"><div class="minus" style="display: none;">-</div><div class="plus" style="display: none;">+</div><div class="buttext"><span class="english">shirt lift</span><span class="chinese">掀起上衣
 </span></div></div><div class="tagbutton" id="butaction185"><div class="minus" style="display: none;">-</div><div class="plus" style="display: none;">+</div><div class="buttext"><span class="english">adjusting_thighhigh</span><span class="chinese">调整过膝袜</span></div></div></form>
 <br><br><br><br><br></div>
-
 
 <div class="layui-tab-item">
 <p class="nr18">嗯……右上角有个开关……</p>
@@ -1419,8 +1324,6 @@
 </span></div></div><div class="tagbutton" id="butjob38"><div class="minus" style="display: none;">-</div><div class="plus" style="display: none;">+</div><div class="buttext"><span class="english">开发中</span><span class="chinese">开发中</span></div></div></form>
 <br><br><br><br><br></div>
 
-
-
   </div>
 </div>
 
@@ -1440,324 +1343,20 @@
 </div>
 </div>
 
-
 </div>
 <br><br><br>
 
 <hr>
 
-
 <div align="center">
-©2024 NovelAI tag生成器 | by <a href="https://myblog.top">无名博客</a>
+©2024 NovelAI tag生成器 | by <a href="https://myblog.top">无名博客</a></br>
+<s>使用<a href="https://cloudflare.com">CloudFlare</a> CDN加速</s>
 </div>
-
-
-
-
 
 <script src="./index_files/layui.js" charset="utf-8"></script>
 <script src="./index_files/post.js" charset="utf-8"></script>
-<script>
-var flagminus="none";
-var flagenglish="inline-block";
-var flagchinese="inline-block";
-var flagplus="none";
-var flagdel="none";
-var flagweightl="{";
-var flagweightr="}";
+<script type="text/javascript" src="./index_files/js.js"></script>
 
-function toast(msg, type, time ){
-    var oDiv = document.createElement("div");
-    oDiv.setAttribute("id", "toast");
-    oDiv.setAttribute("class", 'toast_' + type || 'toast_' + 'info');
-    var oBody = document.getElementsByTagName('body')[0];
-    oBody.append(oDiv);
-    $('#toast').text(msg);
-    $('#toast').fadeIn();
-    setTimeout(function() {
-            $('#toast').fadeOut();
-    }, time);
-}
-
-
-
-layui.use('form', function(){
-var form = layui.form;
-
-form.on('switch(switchr18)', function(data){
-if(this.checked)
-    {
-        console.log(this.checked);
-        $(".r18").css("display","block");$(".nr18").css("display","none");
-        document.getElementById("badbad").value="lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, bad feet, ";
-        
-    }
-    else{
-        $(".r18").css("display","none");$(".nr18").css("display","block");
-        document.getElementById("badbad").value="nsfw, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, bad feet, ";}
-    
-  });
-  
-  form.on('switch(switchchinese)', function(data){
-    if(this.checked)
-    {
-        console.log(this.checked);
-        $(".chinese").css("display","contents");flagchinese="inline-block";
-    }
-    else{
-        console.log(this.checked);
-        $(".chinese").css("display","none");flagchinese="none";}});
-  
-form.on('switch(switchenglish)', function(data){
-    if(this.checked){$(".english").css("display","contents");flagenglish="none";}
-    else{$(".english").css("display","none");flagenglish="none";}});
-  
-form.on('switch(switchminus)', function(data){
-    if(this.checked){$(".minus").css("display","inline-block");flagminus="inline-block";}
-    else{$(".minus").css("display","none");flagminus="none";}});
-    
-form.on('switch(switchplus)', function(data){
-    if(this.checked){$(".plus").css("display","inline-block");flagplus="inline-block";}
-    else{$(".plus").css("display","none");flagplus="none"}});
-
-form.on('switch(switchdel)', function(data){
-    if(this.checked){$(".del").css("display","inline-block");flagdel="inline-block";}
-    else{$(".del").css("display","none");flagdel="none";}});
-    
-form.on('switch(switchicon)', function(data){
-    if(this.checked){
-        console.log("yes");
-        $(".english").each(function(){
-        console.log($(this).html());
-        var reg1 = new RegExp("\\{","g");
-        var reg2 = new RegExp("\\}","g");
-        $(this).html($(this).html().replace(reg1,"("));
-        $(this).html($(this).html().replace(reg2,")"));
-        });
-        flagweightl="(";flagweightr=")";
-    }
-    else{
-        $(".english").each(function(){
-        console.log($(this).html());
-        var reg1 = new RegExp("\\(","g");
-        var reg2 = new RegExp("\\)","g");
-        $(this).html($(this).html().replace(reg1,"{"));
-        $(this).html($(this).html().replace(reg2,"}"));
-        });
-        flagweightl="{";flagweightr="}";
-    }
-    generate();
-});
-    
-  layui.form.render();
-  
-});
-
-
-function generate(){
-var alltag=""; 
-$("#elements-container .english").each(function(){ 
-alltag+=$(this).html()+", ";
-});
-document.getElementById("tagarea").value=alltag;
-}
-
-
-$(document).on('click', ".minus", function () {
-console.log("Minus-");
-var divid=$(this).parent().attr('id');
-divid=divid.replace("tag","but");
-var str=$("#"+divid+" .english").html();
-
-if(str.substr(0, 1)=="{" || str.substr(0, 1)=="(" ){
-    str=str.slice(1,str.length-1);
-    $("#"+divid+" .english").html(str);
-    divid=divid.replace("but","tag");
-    $("#"+divid+" .english").html(str);
-    //$("#"+$(this).parent().attr('id')+" .english").html(str)
-}else
-{
-    var str="["+$("#"+$(this).parent().attr('id')+" .english").html()+"]";
-    
-    $("#"+divid+" .english").html(str);
-    divid=divid.replace("but","tag");
-    $("#"+divid+" .english").html(str);
-    //toast("住手啊！不要再减了！", "warning","1000");
-    }
-generate();
-});
-
-$(document).on('click', ".plus", function () {
-console.log("Plus-");
-var divid=$(this).parent().attr('id');
-divid=divid.replace("tag","but");
-var str=$("#"+divid+" .english").html();
-if(str.substr(0, 1)=="["){
-    str=str.slice(1,str.length-1);
-    $("#"+divid+" .english").html(str);
-    divid=divid.replace("but","tag");
-    $("#"+divid+" .english").html(str);
-
-}else
-{
-    var str=flagweightl+str+flagweightr;
-    $("#"+divid+" .english").html(str);
-    divid=divid.replace("but","tag");
-    $("#"+divid+" .english").html(str);
-    //toast("住手啊！不要再加了！", "warning","1000");
-    }
-generate();
-});
-
-$(document).on('click', ".del", function () {
-var divid=$(this).parent().attr('id');
-$('#'+divid).remove();
-divid=divid.replace("tag","but");
-$('#'+divid).children('.buttext').removeClass("checked");
-generate();
-})
-
-
-$(".buttext").click(function(){
-var divid=$(this).parent().attr('id');
-divid=divid.replace("but","tag");
-if($(this).is('.checked')){
-$(this).removeClass("checked");
-$("#"+divid).remove();
-generate();
-}else{
-var english=$(this).children('.english').html();
-$(this).addClass("checked");
-var newtag="<div class='draggable-element' id='"+divid+"'><div class='minus' style='display:"+flagminus+"'>-</div><div class='plus' style='display:"+flagplus+"'>+</div><div class='tagtext'><span id='eng"+$(this).parent().attr('id')+"' class='english' style='display:"+flagenglish+"'>"+$(this).children('.english').html()+"</span><span class='chinese' style='display:"+flagchinese+"'>"+$(this).children('.chinese').html()+"</span></div><div class='del' style='display:"+flagdel+"'><i class='layui-icon'>X</i></div></div>";
-$('#addtag').before(newtag);
-
-$(function() {
-  $('.draggable-element').arrangeable();
-  $('div').arrangeable({dragSelector: '.drag-area'});
-});
-
-generate();
-
-}
-/*
-$(this).removeAttr("class","disabled");
-$(this).addClass("class","disabled");
-$("#xxxx").addClass("class","className");
-*/
-
-});
-
-
-
-
-
-
-
-function copytag()
-{
-generate();
-document.getElementById("tagarea").select();
-document.execCommand( "copy" );
-toast("复制成功！", "success","1000");
-submittag();
-}
-
-function savetag()
-{
-    localStorage.setItem("tag1", document.getElementById("tagarea").value);
-    
-    layer.alert('还没写好', {
-      time: 1*1000,success: function(layero, index){
-        var timeNum = this.time/1000, setText = function(start){
-          --timeNum;
-        };
-        this.timer = setInterval(setText, 500);
-        if(timeNum <= 0) clearInterval(this.timer);
-      }
-      ,end: function(){
-        clearInterval(this.timer);
-      }
-    });
-}
-
-function randtag()
-{
-layer.alert('嘿嘿，还没做好，再等等', {
-      time: 1*1000,success: function(layero, index){
-        var timeNum = this.time/1000, setText = function(start){
-          --timeNum;
-        };
-        this.timer = setInterval(setText, 500);
-        if(timeNum <= 0) clearInterval(this.timer);
-      }
-      ,end: function(){
-        clearInterval(this.timer);
-      }
-    });
-}
-
-function cleartag()
-{
-    $("#elements-container .tagtext").each(function(){ 
-        console.log($(this).parent().attr('id'));
-        var divid=$(this).parent().attr('id');
-        console.log(divid);
-        $('#'+divid).remove();
-        console.log(divid);
-        divid=divid.replace("tag","but");
-        console.log(divid);
-        $('#'+divid).children('.buttext').removeClass("checked");
-    });
-    
-    generate();
-    /*$("input[type='checkbox']").each(function(){
-        $(this).prop('checked', false);
-    });
-    layui.form.render();*/
-}
-
-function copytag2()
-{
-document.getElementById("tagarea2").select();
-document.execCommand( "copy" );
-toast("复制成功！", "success","1000");
-}
-
-function savetag2()
-{
-    localStorage.setItem("tag2", document.getElementById("tagarea2").value);
-    toast("反向tag已保存！", "success","1000");
-}
-function backtag2()
-{
-    document.getElementById("tagarea2").value="lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, bad feet,";
-}
-function cleartag2()
-{
-    document.getElementById("tagarea2").value="";
-}
-function recover2()
-{
-    document.getElementById("tagarea2").value="lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, bad feet,";
-}
-
-var verno="5";
-var jdno="7";
-if (localStorage.getItem("uid") == verno) {
-    if (localStorage.getItem("jd") != jdno) {
-    document.getElementById("jd").style.display="block";
-    localStorage.setItem("jd", jdno);
-    }
-}
-
-if (localStorage.getItem("uid") != verno) {
-    document.getElementById("hint").style.display="block";
-    localStorage.setItem("uid", verno);
-}
-
-document.getElementById("tagarea2").value=localStorage.getItem("tag2");
-
-</script>
 <script type="text/javascript">
 $(function() {
   $('.draggable-element').arrangeable();
