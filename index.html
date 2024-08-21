@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0025)https://wolfchen.top/tag/ -->
+<!-- 这只是一个demo版本，写的非常乱，自行修改 -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
   <title>NovelAI tag在线生成器</title>
@@ -14,28 +14,94 @@
   <!--link rel="stylesheet" href="./css/style.css"  media="all"-->
   <!--link rel="stylesheet" href="../css/layui.mobile.css"  media="all"-->
   <script src="./index_files/hm.js"></script><script src="./index_files/jquery.min.js"></script><style type="text/css"></style>
-  <script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?103368e67a205780be0a13ca8d5ea4a5";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
 
-<link id="layuicss-laydate" rel="stylesheet" href="./index_files/laydate.css" media="all"><link id="layuicss-layer" rel="stylesheet" href="./index_files/layer.css" media="all"><link id="layuicss-skincodecss" rel="stylesheet" href="./index_files/code.css" media="all"><style class="mpa-style-fix ImageGatherer">.FotorFrame{position:fixed!important}</style><style class="mpa-style-fix SideFunctionPanel">.weui-desktop-online-faq__wrp{top:304px!important;bottom:unset!important}.weui-desktop-online-faq__wrp .weui-desktop-online-faq__switch{width:38px!important}</style></head>  
-<body mpa-version="8.0.11" mpa-extension-id="ibefaeehajgcpooopoegkifhgecigeeg" style=""><div style="width:96%;margin-left:2%;margin-top:1vw;">
-<h2 style="float: left;">NovelAI tag生成器 V2.1</h2>
-<button class="layui-btn layui-btn-normal layui-btn-sm" style="margin-left: 5px;" onclick="showhint()">帮助</button>
-<button class="layui-btn layui-btn-normal layui-btn-sm" style="margin-left: 5px;" onclick="showds()">打赏作者</button>
-<button class="layui-btn layui-btn-normal layui-btn-sm" style="margin-left: 5px;" onclick="showjd()">开发计划</button>
-<a target="_blank" href="https://wolfchen.top/tag/jump.html?from=scq"><button class="layui-btn layui-btn-normal layui-btn-sm" style="margin-left: 5px;">NovelAI资源大全</button></a>
-<a target="_blank" href="http://jiangnanuniversity.mikecrm.com/bw0ylIm"><button class="layui-btn layui-btn-normal layui-btn-sm" style="margin-left: 5px;">提交意见、建议、tag组合</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
-QQ交流群：<a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=9mVueIKl5dxPd7Vfxwt0u2T166sPofgl&amp;jump_from=webapi&amp;authKey=A+Bhd2xNnm8jpL9R9VZLs+RjXq6HAdmrO9AD5jMFOrdYO4PziVl8MPtTuQhW2e+1">830981665</a>(有空位)&nbsp;&nbsp;
-<a target="_blank" href="https://jq.qq.com/?_wv=1027&amp;k=jFbKnnGw">600037848</a>(已满)&nbsp;&nbsp;
-<a target="_blank" href="https://jq.qq.com/?_wv=1027&amp;k=NXpj2oHc">542363433</a>(有空位)
-<a target="_blank" href="https://github.com/WolfChen1996/NovelAI-tag-generator" style="float: right;">github已开源</a>
+<!-- 下面是弹窗代码 -->
+
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .overlay {
+            display: none; /* 初始隐藏 */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(200, 200, 200, 0.7); /* 浅灰色背景 */
+            z-index: 1000;
+        }
+
+        .popup {
+            display: none; /* 初始隐藏 */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) translateY(-30px); /* 向上偏移 */
+            background-color: white;
+            border-radius: 10px; /* 圆角 */
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1001;
+            animation: slideDown 0.5s forwards; /* 动画效果 */
+        }
+
+        /* 弹出动画 */
+        @keyframes slideDown {
+            from {
+                transform: translate(-50%, -50%) translateY(-30px);
+            }
+            to {
+                transform: translate(-50%, -50%) translateY(0);
+            }
+        }
+
+        /* 定时自动弹出 */
+        @keyframes show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="overlay" class="overlay"></div>
+    <div id="popup" class="popup">
+        <h2>欢迎!</h2>
+        <p>这是一个简单的弹窗示例。您可以在这里放置任何内容。</p>
+        <button onclick="closePopup()">关闭</button>
+    </div>
+
+    <script>
+        // 弹出弹窗
+        function openPopup() {
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('popup').style.display = 'block';
+        }
+
+        // 关闭弹窗
+        function closePopup() {
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('popup').style.display = 'none';
+        }
+
+        // 自动弹出
+        window.onload = function() {
+            openPopup();
+        };
+    </script>
+
+</body>
+
+<!-- 弹窗结束 -->
+
+<link id="layuicss-laydate" rel="stylesheet" href="./index_files/laydate.css" media="all"><link id="layuicss-layer" rel="stylesheet" href="./index_files/layer.css" media="all"><link id="layuicss-skincodecss" rel="stylesheet" href="./index_files/code.css" media="all"><style class="mpa-style-fix ImageGatherer">.FotorFrame{position:fixed!important}</style><style class="mpa-style-fix SideFunctionPanel">.weui-desktop-online-faq__wrp{top:304px!important;bottom:unset!important}.weui-desktop-online-faq__wrp .weui-desktop-online-faq__switch{width:38px!important}</style></head>
+<body mpa-version="8.0.11" mpa-extension-id="ibefaeehajgcpooopoegkifhgecigeeg"><div style="width:96%;margin-left:2%;margin-top:1vw;">
+<h2 style="float: left;">NovelAI tag生成器2024-8-20</h2>
+<a target="_blank" href="https://github.com/FlyingIce000/NovelAI-tag-generator" style="margin-left: 5px;">GitHub</a>
 <hr>
 
 <form class="layui-form" style="width:100%">
@@ -51,12 +117,12 @@ QQ交流群：<a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=9mVueIK
 </div>
 
 <div class="layui-input-block" style="display: inline-block;margin-left:0;">
-<label class="layui-form-label" style="font-weight:bold;width: auto;">减权+</label>
+<label class="layui-form-label" style="font-weight:bold;width: auto;">减权-</label>
 <input type="checkbox" lay-filter="switchminus" lay-skin="switch" lay-text="ON|OFF"><div class="layui-unselect layui-form-switch" lay-skin="_switch"><em>OFF</em><i></i></div>
 </div>
 
 <div class="layui-input-block" style="display: inline-block;margin-left:0;">
-<label class="layui-form-label" style="font-weight:bold;width: auto;">降权-</label>
+<label class="layui-form-label" style="font-weight:bold;width: auto;">加权+</label>
 <input type="checkbox" lay-filter="switchplus" lay-skin="switch" lay-text="ON|OFF"><div class="layui-unselect layui-form-switch" lay-skin="_switch"><em>OFF</em><i></i></div>
 </div>
 
@@ -70,15 +136,14 @@ QQ交流群：<a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=9mVueIK
 <input type="checkbox" lay-filter="switchicon" lay-skin="switch" lay-text="( )|{ }"><div class="layui-unselect layui-form-switch" lay-skin="_switch"><em>{ }</em><i></i></div>
 </div>
 
-
 <div class="layui-input-block" style="float:right"><label class="layui-form-label" style="font-weight:bold;width: auto;">R18</label>
 <input type="checkbox" name="switch" lay-skin="switch" lay-text="ON|OFF" lay-filter="switchr18" value="1"><div class="layui-unselect layui-form-switch" lay-skin="_switch"><em>OFF</em><i></i></div>
 </div></form>
 
 <div id="elements-container" style="min-height: 100px;height: auto;line-height: 20px;padding: 6px 10px;resize: vertical;">
     
-<div class="draggable-element" id="tagbesta"><div class="minus" style="display:none">-</div><div class="plus" style="display:none">+</div><div class="tagtext"><span id="engbesta" class="english" style="display:inline-block">masterpiece</span><span class="chinese" style="display:inline-block">大师作品</span></div><div id="del" class="del" style="display:none"><i class="layui-icon"></i></div></div>
-<div class="draggable-element" id="tagbestb"><div class="minus" style="display:none">-</div><div class="plus" style="display:none">+</div><div class="tagtext"><span id="engbestb" class="english" style="display:inline-block">best quality</span><span class="chinese" style="display:inline-block">最好画质</span></div><div id="del" class="del" style="display:none"><i class="layui-icon"></i></div></div>
+<div class="draggable-element" id="tagbesta"><div class="minus" style="display:none">-</div><div class="plus" style="display:none">+</div><div class="tagtext"><span id="engbesta" class="english" style="display:inline-block">masterpiece</span><span class="chinese" style="display:inline-block">大师作品</span></div><div id="del" class="del" style="display:none"><i class="layui-icon">X</i></div></div>
+<div class="draggable-element" id="tagbestb"><div class="minus" style="display:none">-</div><div class="plus" style="display:none">+</div><div class="tagtext"><span id="engbestb" class="english" style="display:inline-block">best quality</span><span class="chinese" style="display:inline-block">最好画质</span></div><div id="del" class="del" style="display:none"><i class="layui-icon">X</i></div></div>
 
 
 <div id="addtag"></div>
@@ -98,10 +163,6 @@ QQ交流群：<a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=9mVueIK
 <div>
 <button class="layui-btn layui-btn-sm layui-btn-normal" onclick="copytag()">复制 Copy</button>
 <button class="layui-btn layui-btn-sm layui-btn-danger" onclick="cleartag()">清空 Clear</button>
-</div>
-
-<div style="margin-top:10px;">
-<a href="https://aitags.fun/" target="_blank"><button class="layui-btn layui-btn-sm layui-btn" style="width: 100%;">免费在线AI画图</button></a>
 </div>
 
 <div style="margin-top:10px;pointer-events:none;opacity:0;">
@@ -146,6 +207,8 @@ QQ交流群：<a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=9mVueIK
     <li>装饰</li>
     <li>动作</li>
     <li>R18</li>
+    <li>动漫/游戏角色</li>
+    
   </ul>
 <div class="layui-tab-content" style="height: 380px;overflow-y: scroll;">
 
@@ -609,7 +672,6 @@ QQ交流群：<a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=9mVueIK
 </span></div></div><div class="tagbutton" id="butface183"><div class="minus" style="display: none;">-</div><div class="plus" style="display: none;">+</div><div class="buttext"><span class="english">blood on face</span><span class="chinese">血在脸上
 </span></div></div><div class="tagbutton" id="butface184"><div class="minus" style="display: none;">-</div><div class="plus" style="display: none;">+</div><div class="buttext"><span class="english">saliva</span><span class="chinese">唾液</span></div></div></form>
 <br><br><br><br><br></div>
-
 
 <div class="layui-tab-item">
     <p>颜色</p>
@@ -1267,6 +1329,19 @@ QQ交流群：<a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=9mVueIK
 <br><br><br><br><br></div>
 
 
+<div class="layui-tab-item">
+    <p>原神角色</p>
+    <form class="layui-form"><div class="tagbutton" id="butpeople0"><div class="minus" style="display: none;">-</div><div class="plus" style="display: none;">+</div><div class="buttext"><span class="english">nahida \(genshin impact\) </span><span class="chinese">纳西妲
+</span></div></div><div class="tagbutton" id="butpeople1"><div class="minus" style="display: none;">-</div><div class="plus" style="display: none;">+</div><div class="buttext"><span class="english">2girls</span><span class="chinese">2女孩
+</span></div></div><div class="tagbutton" id="butpeople23"><div class="minus" style="display: none;">-</div><div class="plus" style="display: none;">+</div><div class="buttext"><span class="english">harem</span><span class="chinese">后宫</span></div></div></form>
+    <hr><p>角色</p>
+    <form class="layui-form"><div class="tagbutton" id="butjob0"><div class="minus" style="display: none;">-</div><div class="plus" style="display: none;">+</div><div class="buttext"><span class="english">angel</span><span class="chinese">天使
+</span></div></div><div class="tagbutton" id="butjob1"><div class="minus" style="display: none;">-</div><div class="plus" style="display: none;">+</div><div class="buttext"><span class="english">cheerleader</span><span class="chinese">啦啦队
+</span></div></div><div class="tagbutton" id="butjob38"><div class="minus" style="display: none;">-</div><div class="plus" style="display: none;">+</div><div class="buttext"><span class="english">yuri</span><span class="chinese">百合</span></div></div></form>
+<br><br><br><br><br></div>
+
+
+
   </div>
 </div>
 
@@ -1287,11 +1362,6 @@ QQ交流群：<a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=9mVueIK
 </div>
 
 
-
-
-
-
-
 </div>
 <br><br><br>
 
@@ -1299,228 +1369,12 @@ QQ交流群：<a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=9mVueIK
 
 
 <div align="center">
-看看我的其他作品？
-
-<a target="_blank" href="https://wolfchen.top/ltmn"><button class="layui-btn layui-btn-normal">流体模拟器</button></a>&nbsp;
-<a target="_blank" href="https://wolfchen.top/pix"><button class="layui-btn layui-btn-normal">一起来画像素画</button></a>&nbsp;
-<a target="_blank" href="http://www.wjiangnan.com/game/shenlong/"><button class="layui-btn layui-btn-normal">召唤神龙破解版</button></a>&nbsp;
-
-<br><br>
-欢迎关注我的公众号：<span onmouseover="showimg()" onmouseleave="hideimg()">JNUWolf</span>
-<img id="floating" src="./index_files/wechat.jpg" style="display:none;width: 50vw;position:fixed;bottom:5vw;left:25vw;z-index:100;pointer-events:none">
-<br>
-<p align="center">很高兴能与大家相遇！祝大家身体健康，生活愉快！<br>~The End~</p>
-</div>
-
-<br><ul class="layui-nav" align="center">
-<p>Made by <a target="_blank" href="https://wolfchen.top/index.html" style="font-weight:bold;color:white">Wolf</a></p>
-<p>Copyright © 2018-2022</p><a target="_blank" href="http://beian.miit.gov.cn/" style="color:white">闽ICP备17012793号</a>
-<p>All rights reserved</p>
-<span class="layui-nav-bar"></span></ul><div id="hint" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,0.5)">
-<div style="position:fixed;top:3%;left:3%;width:86%;height:85%;background-color:rgba(0,0,0,0.7);color: white;border-radius: 20px;padding: 30px;z-index:999;overflow-y: scroll;">
-<div align="right" style="float:right">
-<button class="layui-btn layui-btn-primary" onclick="closehint()">关闭</button>
-</div>
-<h2>全新的2.0版本上线！使用说明：</h2>
-<div class="layui-text" style="color:white"><ul>
-<li>下方选择tag后，可在上方拖拽排序，tag的顺序对生成结果有影响，越靠前越优先。</li>
-<li>开关可隐藏或显示中英文以及按钮</li>
-<li>默认的加权标签是NovelAI/Naifu的 { }，如果你使用Stable Diffusion，可以点击切换成 [ ]</li>
-<li>这是tag生成器，画图还需去Novelai或者StableDiffusion，本地版在线版都行，可参考：<a target="_blank" href="https://www.kdocs.cn/l/cvg8ccOGj5sq">NovelAI资源大全</a></li>
-<li>NovelAI在线免费生成：<a target="_blank" href="https://aitags.fun/">https://aitags.fun/</a></li>
-</ul></div>
-<br><br>
-<h2>小贴士：</h2>
-<div class="layui-text" style="color:white"><ul>
-<li>NovelAI的训练数据来自国外动漫图片网站danbooru，因此，生成标签也是这两个网站自带的那些。本工具目前收集了常用的800+个tag。但是后来在官方流出版的\models\tags.json文件中，发现了模型的全部tag，一共39000+，正在整理。</li>
-<li>可以输入风格、背景、人物描述、装饰、动作，甚至性格等等……输入一整段话也是可以的，ai会去匹配这段话中的关键词。</li>
-<li>*不存在的tag也是可以出东西的，比如hot spring，就是能出泡温泉，不知道为什么。</li>
-<li>NovelAI/Naifu中，{}可以用来增加权重，就是会优先生成有大括号相关的内容。每个大括号权重是x1.05，普通的是1，可以嵌套，例如 {{bondage}}</li>
-<li>Stable-diffusion中，增加权重的是普通的英文括号()，每个括号权重是x1.1，也可以嵌套，例如 ((bondage))</li>
-<li>[]可以用来减少权重，此外，可以输入反向tag来阻止ai生成不想要的图片。官方版本在右下角，stable-diffusion的在第二行。</li>
-<li>欢迎加入QQ群交流：<a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=9mVueIKl5dxPd7Vfxwt0u2T166sPofgl&amp;jump_from=webapi&amp;authKey=A+Bhd2xNnm8jpL9R9VZLs+RjXq6HAdmrO9AD5jMFOrdYO4PziVl8MPtTuQhW2e+1">830981665</a>&nbsp;&nbsp;
-<a target="_blank" href="https://jq.qq.com/?_wv=1027&amp;k=jFbKnnGw">600037848</a>(已满)&nbsp;&nbsp;<a target="_blank" href="https://jq.qq.com/?_wv=1027&amp;k=NXpj2oHc">542363433</a></li>
-<li>NovelAI资源整合+TAG大全：<a href="https://wolfchen.top/tag/jump.html?f">https://www.kdocs.cn/l/cvg8ccOGj5sq</a></li>
-</ul></div>
-<br>
-<br>
-
-<div>
-<div style="width: 50%;float: left;">
-<h2>别人做的生成器：</h2>
-<a target="_blank" href="https://wolfchen.top/tag/">NovelAI tag生成器</a><br>
-<a target="_blank" href="https://tags.novelai.dev/">Danbooru 标签超市</a><br>
-<a target="_blank" href="https://magic-tag.netlify.app/">魔导绪论</a><br>
-<a target="_blank" href="https://aitag.top/">魔咒百科词典</a><br>
-<a target="_blank" href="https://thereisnospon.github.io/NovelAiTag/">NovelAiTag</a><br>
-<a target="_blank" href="https://www.bilibili.com/video/BV1JK411Q7MS/">AI绘图魔导书（APP）</a><br>
-<a target="_blank" href="https://www.bilibili.com/read/cv19028791">AI提词器（软件）</a><br>
-
-<br>
-<h2>相关工具：</h2>
-<li>bigjpg图片无损放大（在线）：<a target="_blank" href="https://bigjpg.com/">https://bigjpg.com/</a></li>
-
-<li>waifu2x图片无损放大（在线）：<a target="_blank" href="http://waifu2x.udp.jp/">http://waifu2x.udp.jp/</a></li>
-<li>图片无损放大（本地）： <a target="_blank" href="https://github.com/xinntao/Real-ESRGAN-ncnn-vulkan">Real-ESRGAN-ncnn-vulkan</a> 下载链接： <a target="_blank" href="https://github.com/xinntao/Real-ESRGAN/releases/download/v0.2.5.0/realesrgan-ncnn-vulkan-20220424-windows.zip">Windows</a> / <a target="_blank" href="https://github.com/xinntao/Real-ESRGAN/releases/download/v0.2.5.0/realesrgan-ncnn-vulkan-20220424-ubuntu.zip">Linux</a> / <a target="_blank" href="https://github.com/xinntao/Real-ESRGAN/releases/download/v0.2.5.0/realesrgan-ncnn-vulkan-20220424-macos.zip">MacOS</a></li>
-
-<br>
-<h2>相关文章：</h2>
-<a target="_blank" href="https://www.bilibili.com/video/BV1m84y1B7Ny/">分享ai绘图的4万个TAG</a><br>
-<a target="_blank" href="https://www.bilibili.com/read/cv19061010">novelAI关键词可用tag自整理Excel表</a><br>
-<a target="_blank" href="https://www.bilibili.com/read/cv19007299?from=articleDetail">NovelAI可用tag关键词收集（一 · 姿势，构图）</a><br>
-<a target="_blank" href="https://www.bilibili.com/read/cv19008409">NovelAI可用tag关键词收集（二 · 头发，表情）</a><br>
-<a target="_blank" href="https://www.bilibili.com/read/cv19010392">NovelAI可用tag关键词收集（三 · 身体，服装）</a><br>
-<a target="_blank" href="https://www.bilibili.com/read/cv19008409">NovelAI可用tag关键词收集（四 · 背景，其他）</a><br>
-<a target="_blank" href="https://www.bilibili.com/read/cv19019708">关于Novel AI 的prompt tag的一点理解（tag分享）</a><br>
-<a target="_blank" href="https://tieba.baidu.com/p/8085717971?pid=145803217648&amp;cid=0#145803217648">不要乱输入咒语了</a><br>
-</div>
-<div align="center" style="width: 50%;float: left;">
-    <img style="width: 50%;" src="./index_files/xrJ0kF.jpg"><br>
-    <h2>支付宝扫一扫，领取红包</h2>
-</div>
-</div>
-<div style="width: 50%;display: block;">&nbsp;</div><br>
-<div align="center">
-<button class="layui-btn layui-btn-primary" onclick="closehint()">关闭</button>
-</div>
-
-</div>
-</div><div id="ds" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,0.5)">
-<div style="position:fixed;top:3%;left:3%;width:86%;height:85%;background-color:rgba(0,0,0,0.7);color: white;border-radius: 20px;padding: 30px;z-index:999;overflow-y: scroll;">
-
-    <div>
-<div align="center">
-<button class="layui-btn layui-btn-primary" onclick="closeds()">关闭</button>
-</div>
-<div style="width: 60%;float: left;">
-<h2>打赏清单：(按时间顺序，截至到2022.11.01 - 00:10)</h2>    
-<table border="5" style="line-height:20px">
-<tbody><tr><th>昵称</th><th>金额</th><th>留言</th><th>反馈</th></tr>
-
-<tr><td>	**霖	</td><td>	30.00	</td><td>	胸部大小神马的也请快一点添加吧	</td><td>	抱歉，已添加！感谢支持！	</td></tr>
-<tr><td>		</td><td>	5.00	</td><td>	感谢！希望有动作词条的组合（提示，例如双手脑后+举手露腋	</td><td>	会有的；你说的这个已添加；你们可以在顶上的表单里提交一下想要的tag组合。	</td></tr>
-<tr><td>	flag	</td><td>	5.00	</td><td>	支持！	</td><td>	感谢支持！	</td></tr>
-<tr><td>	**秦	</td><td>	5.00	</td><td>	好用，替群友感谢你	</td><td>	感谢你！！	</td></tr>
-<tr><td>	Koma Swift	</td><td>	5.00	</td><td>	支持一下	</td><td>	感谢支持！	</td></tr>
-<tr><td>	花北夜	</td><td>	25.00	</td><td>	希望大佬多出一点常用组合(づ ●─● )づ	</td><td>	嗯呐，平时遇到的都放进来了，你们也可以提交	</td></tr>
-<tr><td>	**峰	</td><td>	20.00	</td><td>	/	</td><td>	感谢支持！	</td></tr>
-<tr><td>	**美	</td><td>	1.00	</td><td>	加油大佬	</td><td>	嗯嗯！在加油了，感谢！	</td></tr>
-<tr><td>	CHMCG	</td><td>	10.00	</td><td>	做的太好了，必须支持，要做下去啊要！	</td><td>	嘿嘿感谢支持！！	</td></tr>
-<tr><td>	/	</td><td>	1.00	</td><td>	谢谢你 陌生人	</td><td>	谢谢你，好心人！	</td></tr>
-<tr><td>	**儒	</td><td>	20.00	</td><td>	中国式英雄	</td><td>	过奖过奖，感谢支持	</td></tr>
-<tr><td>	*仁	</td><td>	2.00	</td><td>	/	</td><td>	感谢支持！	</td></tr>
-<tr><td>	**扬	</td><td>	10.00	</td><td>	/	</td><td>	感谢支持！	</td></tr>
-<tr><td>	汨罗渊水乱拍波	</td><td>	10.00	</td><td>	评价是请尽力做下去	</td><td>	嗯嗯！会的，放心！	</td></tr>
-<tr><td>	/	</td><td>	5.14	</td><td>	/	</td><td>	感谢支持！	</td></tr>
-<tr><td>	**桢	</td><td>	50.00	</td><td>	/	</td><td>	感谢支持！	</td></tr>
-<tr><td>	何志恒	</td><td>	18.00	</td><td>	有考虑过众包翻译吗crowdin之类的想贡献一下力量	</td><td>	嗯，我那个在线文档，后面那些tag的页签，都是所有人可以 编辑器的其实……	</td></tr>
-<tr><td>	乘着这场风	</td><td>	5.00	</td><td>	膜拜大佬	</td><td>	嘿嘿嘿	</td></tr>
-<tr><td>	O0OºοÖöΟ	</td><td>	10.00	</td><td>	感谢大佬，希望能多添加一些环境tag	</td><td>	会的，鞋子刚弄完，已经开始整环境了	</td></tr>
-<tr><td>	YeeWay	</td><td>	10.00	</td><td>	加油啊！	</td><td>	加油ing	</td></tr>
-<tr><td>	浮伤年华-忧伤说笑	</td><td>	2.00	</td><td>	啥时候能整个3w多的tag啊，真期待啊	</td><td>	一直在整噢	</td></tr>
-<tr><td>	Biù Biù~	</td><td>	50.00	</td><td>	加油	</td><td>	加油！	</td></tr>
-<tr><td>	Des	</td><td>	10.00	</td><td>	求加搜索和英文首字母首排列功能	</td><td>	搜索会有的，首字母排列……emmmmmmmm等等看	</td></tr>
-<tr><td>	/	</td><td>	10.00	</td><td>	支持大佬	</td><td>	感谢支持！	</td></tr>
-<tr><td>	/	</td><td>	10.00	</td><td>	整理不易，工具很好用，感谢！	</td><td>	感谢支持！	</td></tr>
-<tr><td>	清茶于酒	</td><td>	10.00	</td><td>	留言有限制……综合tag亲测有效	</td><td>	嗯，我知道，组合、句子，都是有效的。此外有些tag和组合，虽然根本没有在模型的tag里，但是也能生成相关图片，比如【温泉hot spring】</td></tr>
-<tr><td>	清茶于酒	</td><td>	20.00	</td><td>	望大佬能整理更多综合tag：展示足、XX在小腹、掰开XX等	</td><td>	目前还没整理到R18，但是你提到的这3个先在常用组合里加上了；后期会加入自行添加tag的功能。	</td></tr>
-<tr><td>	/	</td><td>	10.00	</td><td>	你才是真正的英雄	</td><td>	过奖过奖，感谢支持	</td></tr>
-<tr><td>	张梦阳	</td><td>	2.00	</td><td>	感谢大佬	</td><td>	感谢小伙伴！	</td></tr>
-<tr><td>	**峰	</td><td>	20.00	</td><td>	/	</td><td>	谢谢支持	</td></tr>
-<tr><td>	纷纷纭纭	</td><td>	5.00	</td><td>	感谢分享	</td><td>	感谢打赏	</td></tr>
-<tr><td>	/	</td><td>	6.48	</td><td>	就你有R18，字词	</td><td>	嘿嘿嘿	</td></tr>
-<tr><td>	荭	</td><td>	5.00	</td><td>	谢谢，希望在更新点哦	</td><td>	嗯呐，鞋袜的快整理好了	</td></tr>
-<tr><td>	/	</td><td>	5.00	</td><td>	/	</td><td>	谢谢支持	</td></tr>
-<tr><td>	**航	</td><td>	5.00	</td><td>	/	</td><td>	谢谢支持	</td></tr>
-<tr><td>	🍒🍒🍒🍒	</td><td>	5.00	</td><td>	大佬加油啊 希望能加上权重	</td><td>	会的，等等党终将胜利	</td></tr>
-<tr><td>	**昊	</td><td>	6.00	</td><td>	学生自己没钱没法支持多少，只希望大佬能坚持	</td><td>	放心，我会把这个项目完善到我理想的样子	</td></tr>
-<tr><td>	霂凨	</td><td>	5.00	</td><td>	谢谢大佬，支持一下	</td><td>	谢谢你，陌生人	</td></tr>
-<tr><td>	**尘	</td><td>	10.00	</td><td>		</td><td>	谢谢支持	</td></tr>
-<tr><td>	空	</td><td>	5.00	</td><td>	感谢大佬，希望大佬继续做下去	</td><td>	会的，放心	</td></tr>
-<tr><td>	qaz	</td><td>	10.00	</td><td>	增添tag的优雅的选择方式是个很有用的功能，坚持下去啊	</td><td>	但是我在想，是[]减权更重要，还是反tag更重要，或许要加上拖拽功能	</td></tr>
-<tr><td>	*航	</td><td>	50.00	</td><td>	加油	</td><td>	谢谢支持	</td></tr>
-<tr><td>	/	</td><td>	3.00	</td><td>	钱不多。但如果可以的话，希望环境tag多一点。其他的到处都是	</td><td>	嗯嗯，会有的，再等等！	</td></tr>
-<tr><td>	/	</td><td>	5.00	</td><td>	/	</td><td>	谢谢支持	</td></tr>
-<tr><td>	/	</td><td>	2.00	</td><td>	/	</td><td>	谢谢支持	</td></tr>
-<tr><td>	上穴八目	</td><td>	5.00	</td><td>	/	</td><td>	谢谢支持	</td></tr>
-<tr><td>	堂吉诃德	</td><td>	5.00	</td><td>	谢谢你hero	</td><td>	谢谢你，陌生人	</td></tr>
-<tr><td>	/	</td><td>	1.00	</td><td>	谢谢啦，大佬，学生没钱，支持一下	</td><td>	谢谢你，富有的学生	</td></tr>
-<tr><td>	蛮蛮蛮	</td><td>	4.08	</td><td>	/	</td><td>	谢谢支持	</td></tr>
-<tr><td>	生活就是schwer	</td><td>	1.00	</td><td>	作为一名小白，感谢大佬的分享和整理。	</td><td>	感谢支持！	</td></tr>
-<tr><td>	/	</td><td>	2.00	</td><td>	/	</td><td>	感谢支持！	</td></tr>
-<tr><td>	洛河	</td><td>	2.00	</td><td>	感谢大佬	</td><td>	感谢你，陌生人！	</td></tr>
-<tr><td>	岩	</td><td>	1.00	</td><td>		</td><td>	感谢支持！	</td></tr>
-
-    
-    
-</tbody></table>
-
-</div>
-<div align="center" style="width: 37%;float: right;">
-    <h2>打赏作者</h2><br><img style="width: 100%;" src="./index_files/both.jpg">
-    <!--<h2>打赏作者</h2><br><img style="width: 100%;" src="https://s1.ax1x.com/2022/10/18/xrtjzj.jpg">-->
-    <br><br>
-     <h2>欢迎关注公众号</h2><br><img style="width: 100%;" src="./index_files/wechat.jpg">
-    <!--<h2>打赏作者</h2><br><img style="width: 100%;" src="https://s1.ax1x.com/2022/10/18/xrtjzj.jpg">-->
-    
-    
-</div>
-</div><div style="width: 50%;display: block;">&nbsp;</div>
-
-<div align="center">
-    <button class="layui-btn layui-btn-primary" onclick="closeds()">关闭</button>
-</div>
-    
-    </div>
-</div>
-<div id="jd" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,0.5)">
-<div style="position:fixed;top:3%;left:3%;width:86%;height:85%;background-color:rgba(0,0,0,0.7);color: white;border-radius: 20px;padding: 30px;z-index:999;overflow-y: scroll;">
-    <div align="right" style="float:right">
-        <button class="layui-btn layui-btn-primary" onclick="closejd()">关闭</button>
-    </div>
-<h2>更新记录及进度</h2>
-
-<div class="layui-text" style="color:white">    
-<ul>
-
-<li>正在整理【鞋子&amp;背景&amp;环境】相关tag</li>
-<li>2022.11.02：补充了眼睛、胸相关tag
-</li><li>2022.11.01：更新至V2.1，把加权按钮挪到左边了，这样加权的时候就不会因为标签变长而苦恼；更改了配色，没有之前那么压抑了。修改了分类，添加了胸部相关的tag。</li>
-<li>2022.10.30：2.0版本上线！交互方式全部重写，可拖拽排序、编辑权重、快速删除。</li>
-<li>2022.10.24：补充了30个发型、头饰相关tag，9个头发相关动作
-</li><li>2022.10.23：【袜子&amp;腿饰相关tag整理完毕】的800多个tag，留下了107个常用的袜子和腿饰tag
-</li><li>2022.10.20：增加了几个按钮，功能还没写好。大家久等了！</li>
-<li>2022.10.17：【头发&amp;头饰相关tag整理完毕】整理完了头发相关的600多个tag，留下了119个常用的头发及发饰tag</li>
-</ul></div>
-<br><br>
-<h2>开发计划：</h2>
-<div class="layui-text" style="color:white"><ul>
-阶段一：完善基础功能：
-<li>整理模型中自带的39193个标签（10.24：进度2.52%）</li>
-<li>随机选择tag功能</li>
-<li>保存组合功能</li>
-<li>自行添加tag</li>
-<br>
-阶段二：优化操作方式：
-<li>点击上方标签，复制单个tag</li>
-<li>通过拖拽进行正负tag的移动</li>
-<br>
-阶段三：添加其他功能：
-<li>添加tag搜索功能</li>
-<li>添加分享tag功能</li>
-</ul></div>
-    <br>
-    <br>
-    
-    <div align="center">
-        <button class="layui-btn layui-btn-primary" onclick="closejd()">关闭</button>
-    </div>
-    
-    </div>
+©2024 NovelAI tag生成器
 </div>
 
 
-   
+
+
 
 <script src="./index_files/layui.js" charset="utf-8"></script>
 <script src="./index_files/post.js" charset="utf-8"></script>
@@ -1695,7 +1549,7 @@ generate();
 }else{
 var english=$(this).children('.english').html();
 $(this).addClass("checked");
-var newtag="<div class='draggable-element' id='"+divid+"'><div class='minus' style='display:"+flagminus+"'>-</div><div class='plus' style='display:"+flagplus+"'>+</div><div class='tagtext'><span id='eng"+$(this).parent().attr('id')+"' class='english' style='display:"+flagenglish+"'>"+$(this).children('.english').html()+"</span><span class='chinese' style='display:"+flagchinese+"'>"+$(this).children('.chinese').html()+"</span></div><div class='del' style='display:"+flagdel+"'><i class='layui-icon'>&#xe640;</i></div></div>";
+var newtag="<div class='draggable-element' id='"+divid+"'><div class='minus' style='display:"+flagminus+"'>-</div><div class='plus' style='display:"+flagplus+"'>+</div><div class='tagtext'><span id='eng"+$(this).parent().attr('id')+"' class='english' style='display:"+flagenglish+"'>"+$(this).children('.english').html()+"</span><span class='chinese' style='display:"+flagchinese+"'>"+$(this).children('.chinese').html()+"</span></div><div class='del' style='display:"+flagdel+"'><i class='layui-icon'>X</i></div></div>";
 $('#addtag').before(newtag);
 
 $(function() {
